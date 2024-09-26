@@ -25,7 +25,12 @@ const TimeZoneDisplay = () => {
   const [showSeconds, setShowSeconds] = useState(false);
   const [showOptions, setShowOptions] = useState(false);
   const [newTimeZone, setNewTimeZone] = useState('');
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return window.matchMedia?.('(prefers-color-scheme: dark)').matches;
+    }
+    return false;
+  });
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const fetchTimeZone = async (city: unknown) => {
