@@ -5,12 +5,20 @@ import { Settings, Clock, X, Plus, Sun, Moon } from 'lucide-react';
 import { toast } from 'react-hot-toast';
 
 const TimeZoneDisplay = () => {
-  const [timeZones, setTimeZones] = useState([
-    { id: 1, city: 'San Francisco, CA, United States', timezone: 'America/Los_Angeles' },
-    { id: 2, city: 'New York, NY, United States', timezone: 'America/New_York' },
-    { id: 3, city: 'London, United Kingdom', timezone: 'Europe/London' },
-    { id: 5, city: 'Lisbon, Portugal', timezone: 'Europe/Lisbon' },
-  ]);
+  const [timeZones, setTimeZones] = useState(() => {
+    if (typeof localStorage !== 'undefined') {
+      const storedTimeZones = localStorage.getItem('timeZones');
+      if (storedTimeZones) {
+        return JSON.parse(storedTimeZones);
+      }
+    }
+    return [
+      { id: 1, city: 'San Francisco, CA, United States', timezone: 'America/Los_Angeles' },
+      { id: 2, city: 'New York, NY, United States', timezone: 'America/New_York' },
+      { id: 3, city: 'London, United Kingdom', timezone: 'Europe/London' },
+      { id: 5, city: 'Lisbon, Portugal', timezone: 'Europe/Lisbon' },
+    ];
+  });
   interface TimeZone {
     id: number;
     city: string;
@@ -29,7 +37,6 @@ const TimeZoneDisplay = () => {
   const [darkMode, setDarkMode] = useState(() => {
       // get local storage
       if (typeof localStorage !== 'undefined') {
-        console.log('localStorage', localStorage.getItem('darkMode'));
         return localStorage.getItem('darkMode') === 'true';
       }
       // get system preference
@@ -48,7 +55,7 @@ const TimeZoneDisplay = () => {
   };
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const fetchTimeZone = async (city: unknown) => {
+  const fetchTimeZone = async (city: string) => {
     const response = await fetch('/api/timezone', {
       method: 'POST',
       headers: {
@@ -67,12 +74,19 @@ const TimeZoneDisplay = () => {
   const addTimeZone = async () => {
     if (newTimeZone) {
       const data = await fetchTimeZone(newTimeZone);
-      const {city, timezone} = data;
-      setTimeZones(prevZones => [...prevZones, { 
-        id: Date.now(), 
+      const { city, timezone } = data;
+      const updatedTimeZones = [
+      ...timeZones,
+      {
+        id: Date.now(),
         city,
         timezone,
-      }]);
+      },
+      ];
+      setTimeZones(updatedTimeZones);
+      if (typeof localStorage !== 'undefined') {
+      localStorage.setItem('timeZones', JSON.stringify(updatedTimeZones));
+      }
       setNewTimeZone('');
     }
   };
@@ -128,9 +142,14 @@ const TimeZoneDisplay = () => {
     const interval = setInterval(updateTimes, 1000);
     return () => clearInterval(interval);
   }, [timeZones, use24Hour, showSeconds]);
-
   const deleteTimeZone = (id: number) => {
-    setTimeZones(prevZones => prevZones.filter(zone => zone.id !== id));
+    setTimeZones(prevZones => {
+      const updatedZones = prevZones.filter(zone => zone.id !== id);
+      if (typeof localStorage !== 'undefined') {
+        localStorage.setItem('timeZones', JSON.stringify(updatedZones));
+      }
+      return updatedZones;
+    });
   };
 
 
