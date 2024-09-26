@@ -26,11 +26,25 @@ const TimeZoneDisplay = () => {
   const [showOptions, setShowOptions] = useState(false);
   const [newTimeZone, setNewTimeZone] = useState('');
   const [darkMode, setDarkMode] = useState(() => {
+      // get local storage
+      if (typeof localStorage !== 'undefined') {
+        console.log('localStorage', localStorage.getItem('darkMode'));
+        return localStorage.getItem('darkMode') === 'true';
+      }
+      // get system preference
     if (typeof window !== 'undefined') {
       return window.matchMedia?.('(prefers-color-scheme: dark)').matches;
     }
+  
     return false;
   });
+
+  const toggleDarkMode = (dark: boolean) => {
+    if (typeof localStorage !== 'undefined') {
+      localStorage.setItem('darkMode', dark.toString());
+    }
+    setDarkMode(dark);
+  };
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const fetchTimeZone = async (city: unknown) => {
@@ -209,7 +223,7 @@ const getGradient = (isDaytime: boolean, isMorning: boolean) => {
             </div>
             <button
             type='button'
-              onClick={() => setDarkMode(!darkMode)}
+              onClick={() => toggleDarkMode(!darkMode)}
               className={`flex items-center font-bold ${darkMode ? 'text-white bg-yellow-600' : 'text-gray-800 bg-indigo-400'} px-3 py-1 rounded transition-colors duration-200 hover:opacity-80 mt-2 md:mt-0`}
             >
               {darkMode ? <Sun size={16} className="mr-1" /> : <Moon size={16} className="mr-1" />}

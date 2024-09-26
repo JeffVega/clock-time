@@ -1,9 +1,10 @@
-import TimeZoneDisplay from "@/_components/TimeZone/Timezone";
+import dynamic from "next/dynamic";
 
+const TimeZone = dynamic(() => import("@/_components/TimeZone/Timezone"), { ssr: false });
 export default function Home() {
   return (
     <div>
-      <TimeZoneDisplay />
+      <TimeZone />
     </div>
   );
 }
