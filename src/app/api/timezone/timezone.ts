@@ -340,4 +340,10 @@ export const timezoneData:CityData[] = [
     { id: 339, city: 'Lusaka, Zambia', timezone: 'Africa/Lusaka' },
     { id: 340, city: 'Harare, Zimbabwe', timezone: 'Africa/Harare' },
     { id: 341, city: 'Mariehamn, Åland Islands', timezone: 'Europe/Mariehamn' },
+    // add hawaii
+    { id: 342, city: 'Honolulu, Hawaii', timezone: 'Pacific/Honolulu' },
+    // add alaska
+    { id: 343, city: 'Anchorage, Alaska', timezone: 'America/Anchorage' },
+    // add pacific
+    { id: 344, city: 'Los Angeles, Pacific', timezone: 'America/Los_Angeles' },
 ];
