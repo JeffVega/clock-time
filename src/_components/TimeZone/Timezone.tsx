@@ -27,17 +27,17 @@ const TimeZoneDisplay = () => {
     const data = await response.json();
     return data;
   };
-  const addTimeZone = async () => {
-    if (newTimeZone) {
-      const data = await fetchTimeZone(newTimeZone);
-      setTimeZones(prevZones => [...prevZones, { 
-        id: Date.now(), 
-        city: data.zoneName, 
-        timezone: data.zoneName 
-      }]);
-      setNewTimeZone('');
-    }
-  };
+  // const addTimeZone = async () => {
+  //   if (newTimeZone) {
+  //     const data = await fetchTimeZone(newTimeZone);
+  //     setTimeZones(prevZones => [...prevZones, { 
+  //       id: Date.now(), 
+  //       city: data.zoneName, 
+  //       timezone: data.zoneName 
+  //     }]);
+  //     setNewTimeZone('');
+  //   }
+  // };
 
   useEffect(() => {
     const userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
