@@ -1,5 +1,6 @@
 'use client';
 import React, { useState, useEffect } from 'react';
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { Settings, Clock, X, Plus, Sun, Moon } from 'lucide-react';
 
 const TimeZoneDisplay = () => {
@@ -9,14 +10,25 @@ const TimeZoneDisplay = () => {
     { id: 3, city: 'London, United Kingdom', timezone: 'Europe/London' },
     { id: 5, city: 'Daan District, Taiwan', timezone: 'Asia/Taipei' },
   ]);
-  const [times, setTimes] = useState([]);
+  interface TimeZone {
+    id: number;
+    city: string;
+    timezone: string;
+    time?: string;
+    date?: string;
+    isDaytime?: boolean;
+    isMorning?: boolean;
+  }
+  
+  const [times, setTimes] = useState<TimeZone[]>([]);
   const [use24Hour, setUse24Hour] = useState(false);
   const [showSeconds, setShowSeconds] = useState(false);
   const [showOptions, setShowOptions] = useState(false);
   const [newTimeZone, setNewTimeZone] = useState('');
   const [darkMode, setDarkMode] = useState(false);
 
-  const fetchTimeZone = async (city) => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const fetchTimeZone = async (city: unknown) => {
     const response = await fetch('/api/fetchTimeZone', {
       method: 'POST',
       headers: {
@@ -73,8 +85,8 @@ const TimeZoneDisplay = () => {
           hour: 'numeric',
           hour12: false
         });
-        const isDaytime = (hour >= 6 && hour < 18) || hour === 17;
-        const isMorning = hour >= 6 && hour < 12;
+        const isDaytime = (Number(hour) >= 6 && Number(hour) < 18) || Number(hour) === 17;
+        const isMorning = Number(hour) >= 6 && Number(hour) < 12;
         return {
           ...tz,
           time: timeString,
@@ -91,7 +103,7 @@ const TimeZoneDisplay = () => {
     return () => clearInterval(interval);
   }, [timeZones, use24Hour, showSeconds]);
 
-  const deleteTimeZone = (id) => {
+  const deleteTimeZone = (id: number) => {
     setTimeZones(prevZones => prevZones.filter(zone => zone.id !== id));
   };
 
@@ -106,7 +118,7 @@ const TimeZoneDisplay = () => {
     }
   };
 
-const getGradient = (isDaytime, isMorning:any) => {
+const getGradient = (isDaytime: boolean, isMorning: boolean) => {
     if (isMorning) {
         return 'bg-gradient-to-br from-red-400 to-amber-600';
     }
@@ -118,10 +130,10 @@ const getGradient = (isDaytime, isMorning:any) => {
   return (
     <div className={`flex flex-col h-screen w-screen ${darkMode ? 'bg-gray-900' : 'bg-gray-100'} transition-colors duration-500`}>
       <div className="flex-grow flex flex-wrap overflow-auto p-4">
-        {times.map((tz, index) => (
+        {times.map((tz) => (
           <div 
             key={tz.id} 
-            className={`flex flex-col justify-between min-w-[200px] p-4 m-2 rounded-lg shadow-lg transition-all duration-300 ease-in-out  ${getGradient(tz.isDaytime, tz.isMorning)}`}
+            className={`flex flex-col justify-between min-w-[200px] p-4 m-2 rounded-lg shadow-lg transition-all duration-300 ease-in-out  ${getGradient(tz.isDaytime ?? false, tz.isMorning ?? false)}`}
             style={{flex: '1 0 calc(20% - 1rem)'}}
           >
             <div>
