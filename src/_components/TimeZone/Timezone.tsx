@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { Settings, Clock, X, Plus, Sun, Moon } from 'lucide-react';
+import { toast } from 'react-hot-toast';
 
 const TimeZoneDisplay = () => {
   const [timeZones, setTimeZones] = useState([
@@ -56,6 +57,8 @@ const TimeZoneDisplay = () => {
       body: JSON.stringify({ city })
     });
     if (!response.ok) {
+      const responseBody = await response.json();
+      toast.error(` ${responseBody.error}`);
       throw new Error(`Error fetching data: ${response.statusText}`);
     }
     const data = await response.json();
