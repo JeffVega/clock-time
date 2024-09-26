@@ -227,21 +227,28 @@ const getGradient = (isDaytime: boolean, isMorning: boolean) => {
               Show Seconds
             </label>
             <div className="flex items-center mt-2 md:mt-0">
-              <input 
-                type="text" 
-                value={newTimeZone}
-                onChange={(e) => setNewTimeZone(e.target.value)}
-                placeholder="Add new time zone"
-                className="px-2 py-1 rounded mr-2 border border-gray-300"
-              />
-              <button 
-              type='button'
-                onClick={addTimeZone}
-                className={`flex items-center ${darkMode ? 'text-white bg-green-600' : 'text-gray-800 bg-green-400'} px-3 py-1 rounded transition-colors duration-200 hover:bg-green-500`}
+              <form 
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  addTimeZone();
+                }}
+                className="flex items-center mt-2 md:mt-0"
               >
-                <Plus size={16} className="mr-1" />
-                Add
-              </button>
+                <input 
+                  type="text" 
+                  value={newTimeZone}
+                  onChange={(e) => setNewTimeZone(e.target.value)}
+                  placeholder="Add new time zone"
+                  className="px-2 py-1 rounded mr-2 border border-gray-300"
+                />
+                <button 
+                  type='submit'
+                  className={`flex items-center ${darkMode ? 'text-white bg-green-600' : 'text-gray-800 bg-green-400'} px-3 py-1 rounded transition-colors duration-200 hover:bg-green-500`}
+                >
+                  <Plus size={16} className="mr-1" />
+                  Add
+                </button>
+              </form>
             </div>
             <button
             type='button'
