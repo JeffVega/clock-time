@@ -34,27 +34,31 @@ const TimeZoneDisplay = () => {
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const fetchTimeZone = async (city: unknown) => {
-    const response = await fetch('/api/fetchTimeZone', {
+    const response = await fetch('/api/timezone', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({ city })
     });
+    if (!response.ok) {
+      throw new Error(`Error fetching data: ${response.statusText}`);
+    }
     const data = await response.json();
     return data;
   };
-  // const addTimeZone = async () => {
-  //   if (newTimeZone) {
-  //     const data = await fetchTimeZone(newTimeZone);
-  //     setTimeZones(prevZones => [...prevZones, { 
-  //       id: Date.now(), 
-  //       city: data.zoneName, 
-  //       timezone: data.zoneName 
-  //     }]);
-  //     setNewTimeZone('');
-  //   }
-  // };
+  const addTimeZone = async () => {
+    if (newTimeZone) {
+      const data = await fetchTimeZone(newTimeZone);
+      const {city, timezone} = data;
+      setTimeZones(prevZones => [...prevZones, { 
+        id: Date.now(), 
+        city,
+        timezone,
+      }]);
+      setNewTimeZone('');
+    }
+  };
 
   useEffect(() => {
     const userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
@@ -112,16 +116,6 @@ const TimeZoneDisplay = () => {
     setTimeZones(prevZones => prevZones.filter(zone => zone.id !== id));
   };
 
-  const addTimeZone = () => {
-    if (newTimeZone) {
-      setTimeZones(prevZones => [...prevZones, { 
-        id: Date.now(), 
-        city: newTimeZone, 
-        timezone: newTimeZone 
-      }]);
-      setNewTimeZone('');
-    }
-  };
 
 const getGradient = (isDaytime: boolean, isMorning: boolean) => {
     if (isMorning) {
