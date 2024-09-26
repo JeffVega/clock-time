@@ -93,7 +93,7 @@ const TimeZoneDisplay = () => {
 
   useEffect(() => {
     const userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-    setTimeZones(prevZones => {
+    setTimeZones((prevZones: TimeZone[]) => {
       const updatedZones = [{ id: 0, city: 'Your Location', timezone: userTimeZone }, ...prevZones];
       const uniqueZones = Array.from(new Set(updatedZones.map(zone => JSON.stringify(zone))))
         .map(str => JSON.parse(str));
@@ -105,7 +105,7 @@ const TimeZoneDisplay = () => {
 
   useEffect(() => {
     const updateTimes = () => {
-      const newTimes = timeZones.map(tz => {
+      const newTimes = timeZones.map((tz: { timezone: string; }) => {
         const now = new Date();
         const timeString = now.toLocaleString('en-US', { 
           timeZone: tz.timezone,
@@ -143,8 +143,8 @@ const TimeZoneDisplay = () => {
     return () => clearInterval(interval);
   }, [timeZones, use24Hour, showSeconds]);
   const deleteTimeZone = (id: number) => {
-    setTimeZones(prevZones => {
-      const updatedZones = prevZones.filter(zone => zone.id !== id);
+    setTimeZones((prevZones: TimeZone[]) => {
+      const updatedZones = prevZones.filter((zone: { id: number; }) => zone.id !== id);
       if (typeof localStorage !== 'undefined') {
         localStorage.setItem('timeZones', JSON.stringify(updatedZones));
       }
