@@ -8,7 +8,7 @@ const TimeZoneDisplay = () => {
     { id: 1, city: 'San Francisco, CA, United States', timezone: 'America/Los_Angeles' },
     { id: 2, city: 'New York, NY, United States', timezone: 'America/New_York' },
     { id: 3, city: 'London, United Kingdom', timezone: 'Europe/London' },
-    { id: 5, city: 'Daan District, Taiwan', timezone: 'Asia/Taipei' },
+    { id: 5, city: 'Lisbon, Portugal', timezone: 'Europe/Lisbon' },
   ]);
   interface TimeZone {
     id: number;
