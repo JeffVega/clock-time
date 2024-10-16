@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { baseUrl } from "./lib/constant";
 
+console.log(baseUrl,'this is our baseUrl');
 // You'll need to implement this function to fetch all available cities
 async function getAllCities(): Promise<string[]> {
 	// fetch all cities from your API
