@@ -1,7 +1,5 @@
 import type { MetadataRoute } from "next";
 import { baseUrl } from "./lib/constant";
-
-console.log(baseUrl,'this is our baseUrl');
 // You'll need to implement this function to fetch all available cities
 async function getAllCities(): Promise<string[]> {
     try {
@@ -59,6 +57,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 			changeFrequency: "daily" as const,
 			priority: 1,
 		},
+        {
+            url: `${baseUrl}/timezones`,
+            lastModified: new Date(),
+            changeFrequency: "daily" as const,
+            priority: 0.9,
+        }
 		// Add other static pages here if needed
 	];
 

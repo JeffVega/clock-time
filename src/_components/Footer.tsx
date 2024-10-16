@@ -37,6 +37,14 @@ const Footer = () => (
 								Supported Timezones
 							</Link>
 						</li>
+            <li>
+							<Link
+								href="/sitemap.xml"
+								className="text-gray-700 transition hover:opacity-75 dark:text-gray-200 italic"
+							>
+								Sitemap.xml
+							</Link>
+						</li>
 						{/* <li>
 							<Link
 								href="/about"
