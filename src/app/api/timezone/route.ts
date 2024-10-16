@@ -46,5 +46,13 @@ export async function POST(request: NextRequest) {
 
 
 export async function GET() {
-    return NextResponse.json(timezoneData);
+    try {
+        return NextResponse.json(timezoneData);
+    } catch (error) {
+        console.error('Failed to fetch timezone data:', error);
+        return NextResponse.json(
+            { error: 'Failed to fetch timezone data' }, 
+            { status: 500 }
+        );
+    }
     }

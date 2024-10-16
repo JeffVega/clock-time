@@ -2,13 +2,21 @@ import { baseUrl } from "../lib/constant";
 
 export default async function Page() {
   const apiUrl = `${baseUrl}/api/timezone`;
+  let data = [];
+  try {
 	const response = await fetch(apiUrl, {
-		method: "GET",
-		headers: {
-			"Content-Type": "application/json",
-		},
+	  method: "GET",
+	  headers: {
+		"Content-Type": "application/json",
+	  },
 	});
-	const data = await response.json();
+	if (!response.ok) {
+	  throw new Error(`Error: ${response.status} ${response.statusText}`);
+	}
+	data = await response.json();
+  } catch (error) {
+	console.error("Failed to fetch timezones:", error);
+  }
 
 	// const timezones = await data.json();
 	return (

@@ -27,23 +27,26 @@ export async function generateMetadata(
 }
 
 async function fetchTimeZone(city: string) {
-    ;
-	const apiUrl = `${baseUrl}/api/timezone`;
+    const apiUrl = `${baseUrl}/api/timezone`;
 
-  const response = await fetch(apiUrl, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ city }),
-  });
+    try {
+        const response = await fetch(apiUrl, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ city }),
+        });
 
-  if (!response.ok) {
-    throw new Error(`Error fetching data: ${response.statusText}`);
-    
-  }
+        if (!response.ok) {
+            throw new Error(`Error fetching data: ${response.statusText}`);
+        }
 
-  return await response.json();
+        return await response.json();
+    } catch (error) {
+        console.error(error);
+        return [];
+    }
 }
 
 export default async function Page({ params }: Props) {

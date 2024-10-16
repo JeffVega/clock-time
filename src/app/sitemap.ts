@@ -4,18 +4,33 @@ import { baseUrl } from "./lib/constant";
 console.log(baseUrl,'this is our baseUrl');
 // You'll need to implement this function to fetch all available cities
 async function getAllCities(): Promise<string[]> {
-	// fetch all cities from your API
-    const response = await fetch(`${baseUrl}/api/timezone`);
-    const data = await response.json();
-    return data.map((city: { cityName: string }) => city.cityName.replace(/\s+/g, ''));
-    // only return the city names and country
+    try {
+        // fetch all cities from your API
+        const response = await fetch(`${baseUrl}/api/timezone`);
+        if (!response.ok) {
+            throw new Error(`Failed to fetch cities: ${response.statusText}`);
+        }
+        const data = await response.json();
+        return data.map((city: { cityName: string }) => city.cityName.replace(/\s+/g, ''));
+    } catch (error) {
+        console.error('Error fetching cities:', error);
+        return [];
+    }
 }
+
 async function getAllCountries(): Promise<string[]> {
-    // fetch all cities from your API
-    const response = await fetch(`${baseUrl}/api/timezone`);
-    const data = await response.json();
-    return data.map((city: { countryLocation: string }) => city.countryLocation.replace(/\s+/g, ''));
-    // only return the city names and country
+    try {
+        // fetch all cities from your API
+        const response = await fetch(`${baseUrl}/api/timezone`);
+        if (!response.ok) {
+            throw new Error(`Failed to fetch countries: ${response.statusText}`);
+        }
+        const data = await response.json();
+        return data.map((city: { countryLocation: string }) => city.countryLocation.replace(/\s+/g, ''));
+    } catch (error) {
+        console.error('Error fetching countries:', error);
+        return [];
+    }
 }
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
