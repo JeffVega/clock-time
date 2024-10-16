@@ -1,9 +1,7 @@
-import { headers } from "next/headers";
+import { baseUrl } from "../lib/constant";
+
 export default async function Page() {
-	const headersList = headers();
-	const host = headersList.get("host") || "localhost:3000";
-	const protocol = process.env.NODE_ENV === "production" ? "https" : "http";
-	const apiUrl = `${protocol}://${host}/api/timezone`;
+  const apiUrl = `${baseUrl}/api/timezone`;
 	const response = await fetch(apiUrl, {
 		method: "GET",
 		headers: {

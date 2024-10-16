@@ -1,5 +1,5 @@
 import Clock from "@/_components/TimeZone/Clock";
-import { headers } from "next/headers";
+import { baseUrl } from "@/app/lib/constant";
 import type { Metadata } from 'next';
 
 type Props = {
@@ -27,10 +27,8 @@ export async function generateMetadata(
 }
 
 async function fetchTimeZone(city: string) {
-  const headersList = headers();
-  const host = headersList.get('host') || 'localhost:3000';
-  const protocol = process.env.NODE_ENV === 'production' ? 'https' : 'http';
-  const apiUrl = `${protocol}://${host}/api/timezone`;
+    ;
+	const apiUrl = `${baseUrl}/api/timezone`;
 
   const response = await fetch(apiUrl, {
     method: "POST",
@@ -42,6 +40,7 @@ async function fetchTimeZone(city: string) {
 
   if (!response.ok) {
     throw new Error(`Error fetching data: ${response.statusText}`);
+    
   }
 
   return await response.json();

@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
+import { baseUrl } from "./lib/constant";
+
 // You'll need to implement this function to fetch all available cities
 async function getAllCities(): Promise<string[]> {
 	// fetch all cities from your API
