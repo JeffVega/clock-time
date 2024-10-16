@@ -1,5 +1,5 @@
 import { baseUrl } from "../lib/constant";
-
+import Link from "next/link";
 export default async function Page() {
   const apiUrl = `${baseUrl}/api/timezone`;
   let data = [];
@@ -25,16 +25,18 @@ export default async function Page() {
 				TimeZones We Support
 			</h1>
 			<ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-				{data.map(
-					(timezone: { id: string; city: string; timezone: string }) => (
-						<li key={timezone.id} className="mb-2 w-full">
-							<div className="border p-4 rounded-lg h-24 flex items-center">
-								<span className="font-semibold">{timezone.city}</span> -{" "}
-								{timezone.timezone}
-							</div>
-						</li>
-					),
-				)}
+        {data.map(
+          (timezone: { id: string; city: string; cityName:string; timezone: string }) => (
+            <li key={timezone.id} className="mb-2 w-full">
+              <Link href={`/timezones/${timezone.cityName.toLowerCase()}`}>
+                <div className="border p-4 rounded-lg h-24 flex items-center">
+                  <span className="font-semibold">{timezone.city}</span> -{" "}
+                  {timezone.timezone}
+                </div>
+              </Link>
+            </li>
+          ),
+        )}
 			</ul>
 		</div>
 	);
