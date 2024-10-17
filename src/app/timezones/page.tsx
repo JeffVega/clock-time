@@ -39,7 +39,7 @@ export default async function Page() {
 						timezone: string;
 					}) => (
 						<li key={timezone.id} className="mb-2 w-full">
-							<Link href={`/timezones/${timezone.cityName.toLowerCase()}`}>
+							<Link href={`/timezones/${timezone.cityName.toLowerCase().replace(/\s+/g, '-')}`}>
 								<div className="border p-4 rounded-lg h-24 flex items-center">
 									<span className="font-semibold">{timezone.city}</span> -{" "}
 									{timezone.timezone}

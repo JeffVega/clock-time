@@ -9,7 +9,7 @@ async function getAllCities(): Promise<string[]> {
             throw new Error(`Failed to fetch cities: ${response.statusText}`);
         }
         const data = await response.json();
-        return data.map((city: { cityName: string }) => city.cityName.replace(/\s+/g, ''));
+        return data.map((city: { cityName: string }) => city.cityName.toLowerCase().replace(/\s+/g, '-'));
     } catch (error) {
         console.error('Error fetching cities:', error);
         return [];
@@ -24,7 +24,7 @@ async function getAllCountries(): Promise<string[]> {
             throw new Error(`Failed to fetch countries: ${response.statusText}`);
         }
         const data = await response.json();
-        return data.map((city: { countryLocation: string }) => city.countryLocation.replace(/\s+/g, ''));
+        return data.map((city: { countryLocation: string }) => city.countryLocation.toLowerCase().replace(/\s+/g, '-'));
     } catch (error) {
         console.error('Error fetching countries:', error);
         return [];
