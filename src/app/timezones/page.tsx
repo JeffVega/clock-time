@@ -21,8 +21,8 @@ export default async function Page() {
 	// const timezones = await data.json();
 	return (
 		<div className="flex flex-col items-center p-4">
-			<div className="flex flex-col md:flex-row space-x-2 items-center justify-center">
-				<h1 className="text-2xl font-bold mb-4 text-center">
+			<div className="flex flex-col md:flex-row space-x-2 items-center justify-center mb-4">
+				<h1 className="text-2xl font-bold  text-center">
 					TimeZones We Support
 				</h1>
 				<Link className="border border-black text-black rounded p-2" href="/">
