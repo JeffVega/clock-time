@@ -222,7 +222,7 @@ const TimeZoneDisplay = () => {
 				))}
 			</div>
 			<div
-				className={`${darkMode ? "bg-gray-800" : "bg-white"} p-4 transition-colors duration-500 flex flex-row items-center`}
+				className={`${darkMode ? "bg-gray-800" : "bg-white"} p-4 transition-colors duration-500 flex flex-col justify-center md:flex-row items-center`}
 			>
 				<button
 					type="button"
@@ -230,7 +230,7 @@ const TimeZoneDisplay = () => {
 					className={`flex items-center ${darkMode ? "text-white bg-blue-600" : "text-gray-800 bg-blue-400"} px-4 py-2 mx-3  rounded transition-colors duration-200 hover:bg-blue-500`}
 				>
 					<Settings className="mr-2" size={18} />
-					Options
+					Add Timezone
 				</button>
 				{showOptions && (
 					<div className="mx-4 flex flex-wrap items-center space-x-4 transition-opacity duration-500 opacity-100">
