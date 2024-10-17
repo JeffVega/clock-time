@@ -294,7 +294,9 @@ const TimeZoneDisplay = () => {
 						</button>
 					</div>
 				)}
-           <h1 className="bold text-xl text-justify">Time Sync World: Get the perfect time zones for you</h1>
+		<h1 className={`bold text-xl text-justify ${darkMode ? "text-white" : "text-black"}`}>
+			Time Sync World: Get the perfect time zones for you
+		</h1>
 			</div>
    
 		</div>

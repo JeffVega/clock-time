@@ -11,14 +11,24 @@ const Footer = () => (
 
 			<nav className="grid grid-cols-1 gap-8 border-t border-gray-100 pt-8 sm:grid-cols-2 lg:grid-cols-4 lg:pt-16 dark:border-gray-800">
 				<div>
-					<p className="font-medium text-gray-900 dark:text-white">Time Sync World</p>
+					<p className="font-medium text-gray-900 dark:text-white">
+						Time Sync World
+					</p>
 
 					<ul className="mt-6 space-y-4 text-sm">
 						<li className="text-white">
 							Welcome to Timesync World, your global time management solution.
 							We help travelers and professionals stay on time for meetings
-							anywhere in the world with accurate time zone info. Connect seamlessly and never miss a
-							moment!
+							anywhere in the world with accurate time zone info. Connect
+							seamlessly and never miss a moment!
+						</li>
+						<li>
+							<Link
+								href="/"
+								className="text-gray-700 transition hover:opacity-75 dark:text-gray-200"
+							>
+								Home
+							</Link>
 						</li>
 					</ul>
 				</div>
@@ -37,7 +47,7 @@ const Footer = () => (
 								Supported Timezones
 							</Link>
 						</li>
-            <li>
+						<li>
 							<Link
 								href="/sitemap.xml"
 								className="text-gray-700 transition hover:opacity-75 dark:text-gray-200 italic"
