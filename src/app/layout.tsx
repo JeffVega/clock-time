@@ -18,7 +18,7 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
   title: "TimeSync World: Manage & Convert Global Time Zones Easily",
-  description: "Convert, add, and manage time zones effortlessly. Ideal for professionals, expats, and travelers to streamline scheduling, track global events, and organize international meetings with ease",
+  description: "Convert, add, and manage time zones. Perfect for professionals, expats, and travelers to simplify scheduling and organize international meetings",
   alternates: {
     canonical: './',
 },
