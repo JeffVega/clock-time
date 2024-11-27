@@ -33,7 +33,10 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body className={`${geistSans.variable} ${geistMono.variable}  `}>
-				<Script id="surf">
+				<Toaster position="top-center" />
+				{children}
+				<Footer />
+				<Script id="surf" strategy="afterInteractive">
 					{`
     (function(c,l,a,r,i,t,y){
         c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
@@ -42,9 +45,6 @@ export default function RootLayout({
     })(window, document, "clarity", "script", "o9cslzposx");
 `}
 				</Script>
-				<Toaster position="top-center" />
-				{children}
-				<Footer />
 			</body>
 
 			<Script src="https://scripts.simpleanalyticscdn.com/latest.js" />
