@@ -55,6 +55,14 @@ const Footer = () => (
 								Sitemap.xml
 							</Link>
 						</li>
+						<li>
+							<Link
+								href="/privacy/"
+								className="text-gray-700 transition hover:opacity-75 dark:text-gray-200 italic"
+							>
+								Privacy
+							</Link>
+						</li>
 						{/* <li>
 							<Link
 								href="/about"
