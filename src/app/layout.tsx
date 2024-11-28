@@ -4,6 +4,7 @@ import { Toaster } from "react-hot-toast";
 import "./globals.css";
 import Script from "next/script";
 import Footer from "@/_components/Footer";
+import { baseUrl } from "./lib/constant";
 
 const geistSans = localFont({
 	src: "./fonts/GeistVF.woff",
@@ -17,6 +18,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
+	metadataBase: new URL(`${baseUrl}`),
 	title: "TimeSync World: Manage & Convert Global Time Zones Easily",
 	description:
 		"Convert, add, and manage time zones. Perfect for professionals, expats, and travelers to simplify scheduling and organize international meetings",
