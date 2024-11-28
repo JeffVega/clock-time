@@ -10,7 +10,6 @@ export const dynamicParams = true;
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
 	const api = await fetchTimeZone(params.slug);
-
 	return {
 		title: `Current Time in ${api.cityName} Using Time Sync World `,
 		description: `Check the current time in ${api.cityName}, timezone: ${api.timezone} Using Time Sync World`,
@@ -23,14 +22,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 async function fetchTimeZone(city: string) {
 	const apiUrl = `${baseUrl}/api/timezone`;
-
+	const formattedCity = city.replace(/-/g, " ");
 	try {
 		const response = await fetch(apiUrl, {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
 			},
-			body: JSON.stringify({ city }),
+			body: JSON.stringify({ city: formattedCity }),
 			next: { revalidate: 3600 },
 		});
 
