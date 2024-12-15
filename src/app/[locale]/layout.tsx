@@ -6,6 +6,7 @@ import Script from "next/script";
 import { baseUrl } from "../lib/constant";
 import { ThemeProvider } from "@/components/theme-provider";
 import { getLocale } from "next-intl/server";
+import FooterWrapper from "@/components/FooterWrapper";
 
 const geistSans = localFont({
   src: "../fonts/GeistVF.woff",
@@ -46,6 +47,7 @@ export default async function RootLayout({
           disableTransitionOnChange
         >
           {children}
+          <FooterWrapper locale={locale} />
         </ThemeProvider>
 
         <Script id="clarity-script" strategy="afterInteractive">

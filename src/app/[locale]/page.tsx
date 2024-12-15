@@ -3,7 +3,6 @@ import Script from "next/script";
 import type { WebPage } from "schema-dts";
 import DOMPurify from "isomorphic-dompurify";
 import { useMessages } from 'next-intl';
-import FooterWrapper from '@/components/FooterWrapper';
 
 const schema: WebPage = {
   "@type": "WebPage",
@@ -23,7 +22,6 @@ export default function Home({ params: { locale } }: Props) {
   return (
     <main>
       <TimeZoneWrapper messages={messages} locale={locale} />
-      <FooterWrapper locale={locale} />
       <Script
         id="schema-script"
         type="application/ld+json"
