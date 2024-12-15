@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { baseUrl } from "./lib/constant";
+import { routing } from "@/i18n/routing";
 
 const slugify = (text: string) => {
 	return text
@@ -27,40 +28,41 @@ async function getTimezoneData() {
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 	const data = await getTimezoneData();
 	const now = new Date();
+	const locales = routing.locales;
 
-	const staticPages = [
+	const staticPages = locales.flatMap((locale) => [
 		{
-			url: baseUrl,
+			url: `${baseUrl}/${locale}`,
 			lastModified: now,
 			changeFrequency: "daily" as const,
 			priority: 1,
 		},
 		{
-			url: `${baseUrl}/timezones`,
+			url: `${baseUrl}/${locale}/timezones`,
 			lastModified: now,
 			changeFrequency: "daily" as const,
 			priority: 0.9,
 		},
-	];
+	]);
 
 	const dynamicEntries = [
 		...new Set<string>(
-			data
-				.flatMap((item: { cityName: string; countryLocation: string }) => [
+			data.flatMap((item: { cityName: string; countryLocation: string }) =>
+				locales.flatMap((locale) => [
 					{
-						url: `${baseUrl}/timezones/${slugify(item.cityName)}`,
+						url: `${baseUrl}/${locale}/timezones/${slugify(item.cityName)}`,
 						lastModified: now,
 						changeFrequency: "daily" as const,
 						priority: 0.7,
 					},
 					{
-						url: `${baseUrl}/timezones/${slugify(item.countryLocation)}`,
+						url: `${baseUrl}/${locale}/timezones/${slugify(item.countryLocation)}`,
 						lastModified: now,
 						changeFrequency: "daily" as const,
 						priority: 0.7,
 					},
 				])
-				.map((entry: { url: string; lastModified: Date; changeFrequency: "daily"; priority: number }) => JSON.stringify(entry)),
+			).map((entry: { url: string; lastModified: Date; changeFrequency: "daily"; priority: number }) => JSON.stringify(entry))
 		),
 	].map((entry: string) => JSON.parse(entry));
 

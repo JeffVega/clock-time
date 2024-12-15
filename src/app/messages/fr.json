@@ -1,0 +1,56 @@
+{
+  "Index": {
+    "title": "Convertisseur d'heures et de fuseaux horaires",
+    "description": "Convertir l'heure entre différents fuseaux horaires",
+    "search": "Rechercher une ville ou un fuseau horaire"
+  },
+  "Common": {
+    "currentTime": "Heure actuelle",
+    "localTime": "Heure locale"
+  },
+  "Privacy": {
+    "title": "Politique de confidentialité",
+    "introduction": {
+      "title": "Introduction",
+      "content": "Chez Time Sync World, nous accordons la plus grande importance à votre vie privée. Cette politique détaille la façon dont nous collectons, utilisons et protégeons vos données personnelles."
+    }
+  },
+  "TimeZones": {
+    "title": "Fuseaux horaires",
+    "searchPlaceholder": "Rechercher une ville ou un fuseau horaire",
+    "noResults": "Aucun résultat trouvé",
+    "currentTime": "Heure actuelle",
+    "currentTimeIn": "Heure actuelle à :",
+    "errorLoading": "Erreur lors du chargement",
+    "visitFullApp": "Accéder à l'application complète",
+    "meta": {
+      "title": "Heure actuelle à {city} - Time Sync World",
+      "description": "Consultez l'heure actuelle à {city}, fuseau horaire : {timezone} - Time Sync World"
+    },
+    "list": {
+      "title": "Fuseaux horaires disponibles",
+      "goBack": "Retour à l'accueil"
+    },
+    "component": {
+      "addTimezone": "Ajouter un fuseau horaire",
+      "24hourTime": "Format 24 heures",
+      "showSeconds": "Afficher les secondes",
+      "addNewTimezone": "Ajouter un nouveau fuseau horaire",
+      "add": "Ajouter",
+      "lightMode": "Mode clair",
+      "darkMode": "Mode sombre",
+      "yourLocation": "Votre position",
+      "tagline": "Time Sync World : La solution idéale pour gérer vos fuseaux horaires"
+    }
+  },
+  "Footer": {
+    "title": "Time Sync World",
+    "welcome": "Bienvenue sur Time Sync World, votre solution globale de gestion du temps. Nous aidons les voyageurs et les professionnels à coordonner leurs rendez-vous partout dans le monde grâce à des informations précises sur les fuseaux horaires. Restez synchronisé en toute simplicité.",
+    "home": "Accueil",
+    "helpfulLinks": "Liens utiles",
+    "supportedTimezones": "Fuseaux horaires disponibles",
+    "sitemap": "Plan du site.xml",
+    "privacy": "Confidentialité",
+    "copyright": "© {year} Time Sync World. Tous droits réservés."
+  }
+}

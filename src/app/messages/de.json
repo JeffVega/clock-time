@@ -1,0 +1,56 @@
+{
+  "Index": {
+    "title": "Weltzeituhr und Zeitzonen-Konverter",
+    "description": "Konvertiere Zeit zwischen verschiedenen Zeitzonen",
+    "search": "Suche nach einer Stadt oder Zeitzone"
+  },
+  "Common": {
+    "currentTime": "Aktuelle Zeit",
+    "localTime": "Ortszeit"
+  },
+  "Privacy": {
+    "title": "Datenschutzerklärung",
+    "introduction": {
+      "title": "Einführung",
+      "content": "Bei Time Sync World nehmen wir Ihre Privatsphäre sehr ernst. Diese Richtlinie erklärt, wie wir Ihre persönlichen Daten sammeln, verwenden und schützen."
+    }
+  },
+  "TimeZones": {
+    "title": "Zeitzonen",
+    "searchPlaceholder": "Suche nach einer Stadt oder Zeitzone",
+    "noResults": "Keine Zeitzonen gefunden",
+    "currentTime": "Aktuelle Zeit",
+    "currentTimeIn": "Aktuelle Zeit in:",
+    "errorLoading": "Fehler beim Laden der Daten",
+    "visitFullApp": "Besuchen Sie Unsere Vollständige App",
+    "meta": {
+      "title": "Aktuelle Zeit in {city} mit Time Sync World",
+      "description": "Überprüfen Sie die aktuelle Zeit in {city}, Zeitzone: {timezone} mit Time Sync World"
+    },
+    "list": {
+      "title": "Unterstützte Zeitzonen",
+      "goBack": "Zurück zur Startseite"
+    },
+    "component": {
+      "addTimezone": "Zeitzone Hinzufügen",
+      "24hourTime": "24-Stunden-Format",
+      "showSeconds": "Sekunden Anzeigen",
+      "addNewTimezone": "Neue Zeitzone hinzufügen",
+      "add": "Hinzufügen",
+      "lightMode": "Heller Modus",
+      "darkMode": "Dunkler Modus",
+      "yourLocation": "Ihr Standort",
+      "tagline": "Time Sync World: Finden Sie die perfekten Zeitzonen für Sie"
+    }
+  },
+  "Footer": {
+    "title": "Time Sync World",
+    "welcome": "Willkommen bei Timesync World, Ihrer globalen Zeitmanagement-Lösung. Wir helfen Reisenden und Berufstätigen, pünktlich zu Meetings überall auf der Welt zu erscheinen, mit genauen Zeitzoneninformationen. Verbinden Sie sich nahtlos und verpassen Sie keinen Moment!",
+    "home": "Startseite",
+    "helpfulLinks": "Nützliche Links",
+    "supportedTimezones": "Unterstützte Zeitzonen",
+    "sitemap": "Sitemap.xml",
+    "privacy": "Datenschutz",
+    "copyright": "© {year}. Time Sync World. Alle Rechte vorbehalten."
+  }
+} 

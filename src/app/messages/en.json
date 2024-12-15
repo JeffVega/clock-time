@@ -1,0 +1,56 @@
+{
+  "Index": {
+    "title": "World Clock & Time Zone Converter",
+    "description": "Convert time between different time zones",
+    "search": "Search for a city or time zone"
+  },
+  "Common": {
+    "currentTime": "Current Time",
+    "localTime": "Local Time"
+  },
+  "Privacy": {
+    "title": "Privacy Policy",
+    "introduction": {
+      "title": "Introduction",
+      "content": "At Time Sync World, we take your privacy seriously. This policy explains how we collect, use, and protect your personal information."
+    }
+  },
+  "TimeZones": {
+    "title": "Time Zones",
+    "searchPlaceholder": "Search for a city or time zone",
+    "noResults": "No time zones found",
+    "currentTime": "Current Time",
+    "currentTimeIn": "Current Time in:",
+    "errorLoading": "Error loading data",
+    "visitFullApp": "Visit Our Full App",
+    "meta": {
+      "title": "Current Time in {city} Using Time Sync World",
+      "description": "Check the current time in {city}, timezone: {timezone} Using Time Sync World"
+    },
+    "list": {
+      "title": "TimeZones We Support",
+      "goBack": "Go back to Homepage"
+    },
+    "component": {
+      "addTimezone": "Add Timezone",
+      "24hourTime": "24-Hour Time",
+      "showSeconds": "Show Seconds",
+      "addNewTimezone": "Add new time zone",
+      "add": "Add",
+      "lightMode": "Light Mode",
+      "darkMode": "Dark Mode",
+      "yourLocation": "Your Location",
+      "tagline": "Time Sync World: Get the perfect time zones for you"
+    }
+  },
+  "Footer": {
+    "title": "Time Sync World",
+    "welcome": "Welcome to Timesync World, your global time management solution. We help travelers and professionals stay on time for meetings anywhere in the world with accurate time zone info. Connect seamlessly and never miss a moment!",
+    "home": "Home",
+    "helpfulLinks": "Helpful Links",
+    "supportedTimezones": "Supported Timezones",
+    "sitemap": "Sitemap.xml",
+    "privacy": "Privacy",
+    "copyright": "© {year}. Time Sync World. All rights reserved."
+  }
+} 

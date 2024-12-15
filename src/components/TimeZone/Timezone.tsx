@@ -3,8 +3,11 @@ import React, { useState, useEffect } from "react";
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { Settings, Clock, X, Plus, Sun, Moon } from "lucide-react";
 import { toast } from "react-hot-toast";
+import { useTranslations } from 'next-intl';
 
 const TimeZoneDisplay = () => {
+	const t = useTranslations('TimeZones.component');
+	
 	const [timeZones, setTimeZones] = useState(() => {
 		if (typeof localStorage !== "undefined") {
 			const storedTimeZones = localStorage.getItem("timeZones");
@@ -103,7 +106,7 @@ const TimeZoneDisplay = () => {
 		const userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 		setTimeZones((prevZones: TimeZone[]) => {
 			const updatedZones = [
-				{ id: 0, city: "Your Location", timezone: userTimeZone },
+				{ id: 0, city: t('yourLocation'), timezone: userTimeZone },
 				...prevZones,
 			];
 			const uniqueZones = Array.from(
@@ -111,7 +114,7 @@ const TimeZoneDisplay = () => {
 			).map((str) => JSON.parse(str));
 			return uniqueZones;
 		});
-	}, []);
+	}, [t]);
 
 	useEffect(() => {
 		const updateTimes = () => {
@@ -230,72 +233,72 @@ const TimeZoneDisplay = () => {
 					className={`flex items-center ${darkMode ? "text-white bg-blue-600" : "text-gray-800 bg-blue-400"} px-4 py-2 mx-3  rounded transition-colors duration-200 hover:bg-blue-500`}
 				>
 					<Settings className="mr-2" size={18} />
-					Add Timezone
+					{t('addTimezone')}
 				</button>
 				{showOptions && (
 					<div className="mx-4 flex flex-wrap items-center space-x-4 transition-opacity duration-500 opacity-100">
 						<label
-							className={`flex items-center ${darkMode ? "text-white" : "text-gray-800"}`}
-						>
-							<input
-								type="checkbox"
-								checked={use24Hour}
-								onChange={() => setUse24Hour(!use24Hour)}
-								className="mr-2"
-							/>
-							24-Hour Time
-						</label>
-						<label
-							className={`flex items-center ${darkMode ? "text-white" : "text-gray-800"}`}
-						>
-							<input
-								type="checkbox"
-								checked={showSeconds}
-								onChange={() => setShowSeconds(!showSeconds)}
-								className="mr-2"
-							/>
-							Show Seconds
-						</label>
-						<div className="flex items-center mt-2 md:mt-0">
-							<form
-								onSubmit={(e) => {
-									e.preventDefault();
-									addTimeZone();
-								}}
-								className="flex items-center mt-2 md:mt-0"
+								className={`flex items-center ${darkMode ? "text-white" : "text-gray-800"}`}
 							>
 								<input
-									type="text"
-									value={newTimeZone}
-									onChange={(e) => setNewTimeZone(e.target.value)}
-									placeholder="Add new time zone"
-									className="px-2 py-1 rounded mr-2 border border-gray-300"
+									type="checkbox"
+									checked={use24Hour}
+									onChange={() => setUse24Hour(!use24Hour)}
+									className="mr-2"
 								/>
-								<button
-									type="submit"
-									className={`flex items-center ${darkMode ? "text-white bg-green-600" : "text-gray-800 bg-green-400"} px-3 py-1 rounded transition-colors duration-200 hover:bg-green-500`}
+								{t('24hourTime')}
+							</label>
+							<label
+								className={`flex items-center ${darkMode ? "text-white" : "text-gray-800"}`}
+							>
+								<input
+									type="checkbox"
+									checked={showSeconds}
+									onChange={() => setShowSeconds(!showSeconds)}
+									className="mr-2"
+								/>
+								{t('showSeconds')}
+							</label>
+							<div className="flex items-center mt-2 md:mt-0">
+								<form
+									onSubmit={(e) => {
+										e.preventDefault();
+										addTimeZone();
+									}}
+									className="flex items-center mt-2 md:mt-0"
 								>
-									<Plus size={16} className="mr-1" />
-									Add
-								</button>
-							</form>
-						</div>
-						<button
-							type="button"
-							onClick={() => toggleDarkMode(!darkMode)}
-							className={`flex items-center font-bold ${darkMode ? "text-white bg-yellow-600" : "text-gray-800 bg-indigo-400"} px-3 py-1 rounded transition-colors duration-200 hover:opacity-80 mt-2 md:mt-0`}
-						>
-							{darkMode ? (
-								<Sun size={16} className="mr-1" />
-							) : (
-								<Moon size={16} className="mr-1" />
-							)}
-							{darkMode ? "Light Mode" : "Dark Mode"}
-						</button>
+									<input
+										type="text"
+										value={newTimeZone}
+										onChange={(e) => setNewTimeZone(e.target.value)}
+										placeholder={t('addNewTimezone')}
+										className="px-2 py-1 rounded mr-2 border border-gray-300"
+									/>
+									<button
+										type="submit"
+										className={`flex items-center ${darkMode ? "text-white bg-green-600" : "text-gray-800 bg-green-400"} px-3 py-1 rounded transition-colors duration-200 hover:bg-green-500`}
+									>
+										<Plus size={16} className="mr-1" />
+										{t('add')}
+									</button>
+								</form>
+							</div>
+							<button
+								type="button"
+								onClick={() => toggleDarkMode(!darkMode)}
+								className={`flex items-center font-bold ${darkMode ? "text-white bg-yellow-600" : "text-gray-800 bg-indigo-400"} px-3 py-1 rounded transition-colors duration-200 hover:opacity-80 mt-2 md:mt-0`}
+							>
+								{darkMode ? (
+									<Sun size={16} className="mr-1" />
+								) : (
+									<Moon size={16} className="mr-1" />
+								)}
+								{darkMode ? t('lightMode') : t('darkMode')}
+							</button>
 					</div>
 				)}
 		<h1 className={`bold text-xl text-justify ${darkMode ? "text-white" : "text-black"}`}>
-			Time Sync World: Get the perfect time zones for you
+			{t('tagline')}
 		</h1>
 			</div>
    

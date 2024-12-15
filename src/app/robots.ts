@@ -1,13 +1,17 @@
-import type { MetadataRoute } from 'next'
-import { baseUrl } from './lib/constant'
- 
+import { MetadataRoute } from 'next'
+
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: {
       userAgent: '*',
-      allow: ['/','/timezones', '/timezones/*'],
-      disallow: '/api/*',
+      allow: [
+        '/',
+        '/en/*',
+        '/es/*',
+        '/fr/*',
+        '/de/*'
+      ],
     },
-    sitemap:`${baseUrl}/sitemap.xml` ,
+    sitemap: 'https://timesync.world/sitemap.xml',
   }
 }
