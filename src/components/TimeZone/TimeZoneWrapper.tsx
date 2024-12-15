@@ -1,12 +1,12 @@
-'use client';
+"use client";
 
-import { NextIntlClientProvider } from 'next-intl';
-import TimeZoneDisplay from './Timezone';
+import { AbstractIntlMessages, NextIntlClientProvider } from "next-intl";
+import TimeZoneDisplay from "./Timezone";
 
 type Props = {
-  messages: any;
+  messages: AbstractIntlMessages; // Specify messages as a record of string key-value pairs
   locale: string;
-}
+};
 
 export default function TimeZoneWrapper({ messages, locale }: Props) {
   return (
@@ -14,4 +14,4 @@ export default function TimeZoneWrapper({ messages, locale }: Props) {
       <TimeZoneDisplay />
     </NextIntlClientProvider>
   );
-} 
+}
