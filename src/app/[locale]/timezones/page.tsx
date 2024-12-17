@@ -43,12 +43,16 @@ export default async function Page() {
           <li key={timezone.id} className="mb-2 w-full">
             <Link
               href={`/timezones/${timezone.cityName
-                .toLowerCase()
-                .replace(/\s+/g, "-")}`}
+              .toLowerCase()
+              .normalize("NFD")
+              .replace(/[\p{Diacritic}]/gu, "")// Remove diacritics
+              .replace(/\s+/g, "-") // Replace spaces with hyphens
+              .replace(/\./g, "")}` // Remove periods
+              .replace(/'/g, "")}
             >
               <div className="border p-4 rounded-lg h-24 flex items-center">
-                <span className="font-semibold">{timezone.city}</span> -{" "}
-                {timezone.timezone}
+              <span className="font-semibold">{timezone.city}</span> -{" "}
+              {timezone.timezone}
               </div>
             </Link>
           </li>
