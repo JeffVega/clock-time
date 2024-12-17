@@ -1,56 +1,60 @@
 {
-  "Index": {
-    "title": "Convertidor Mundial de Horarios y Zonas Horarias",
-    "description": "Convierte horarios entre diferentes zonas horarias",
-    "search": "Buscar ciudad o zona horaria"
-  },
-  "Common": {
-    "currentTime": "Hora actual",
-    "localTime": "Hora local"
-  },
-  "Privacy": {
-    "title": "Política de privacidad",
-    "introduction": {
-      "title": "Introducción",
-      "content": "En Time Sync World, tu privacidad es nuestra prioridad. Esta política explica cómo recopilamos, utilizamos y protegemos tu información personal."
-    }
-  },
-  "TimeZones": {
-    "title": "Zonas horarias",
-    "searchPlaceholder": "Buscar ciudad o zona horaria",
-    "noResults": "No se encontraron resultados",
-    "currentTime": "Hora actual",
-    "currentTimeIn": "Hora actual en:",
-    "errorLoading": "Error al cargar los datos",
-    "visitFullApp": "Acceder a la aplicación completa",
-    "meta": {
-      "title": "Hora actual en {city} - Time Sync World",
-      "description": "Consulta la hora actual en {city}, zona horaria: {timezone} - Time Sync World"
-    },
-    "list": {
-      "title": "Zonas horarias disponibles",
-      "goBack": "Volver al inicio"
-    },
-    "component": {
-      "addTimezone": "Agregar zona horaria",
-      "24hourTime": "Formato 24 horas",
-      "showSeconds": "Mostrar segundos",
-      "addNewTimezone": "Agregar nueva zona horaria",
-      "add": "Agregar",
-      "lightMode": "Modo claro",
-      "darkMode": "Modo oscuro",
-      "yourLocation": "Tu ubicación",
-      "tagline": "Time Sync World: La herramienta perfecta para gestionar zonas horarias"
-    }
-  },
-  "Footer": {
-    "title": "Time Sync World",
-    "welcome": "Bienvenido a Time Sync World, tu solución global para la gestión del tiempo. Ayudamos a viajeros y profesionales a coordinar reuniones en cualquier parte del mundo con información precisa sobre zonas horarias. Mantente conectado sin complicaciones y aprovecha cada momento.",
-    "home": "Inicio",
-    "helpfulLinks": "Enlaces útiles",
-    "supportedTimezones": "Zonas horarias disponibles",
-    "sitemap": "Mapa del sitio.xml",
-    "privacy": "Privacidad",
-    "copyright": "© {year} Time Sync World. Todos los derechos reservados."
-  }
+	"Index": {
+		"title": "Convertidor Mundial de Horarios y Zonas Horarias",
+		"description": "Convierte horarios entre diferentes zonas horarias",
+		"search": "Buscar ciudad o zona horaria",
+		"meta": {
+			"title": "TimeSync World: Gestione y Convierta Zonas Horarias Globales Fácilmente",
+			"description": "Convierta, agregue y gestione zonas horarias. Perfecto para profesionales, expatriados y viajeros para simplificar la programación y organizar reuniones internacionales"
+		}
+	},
+	"Common": {
+		"currentTime": "Hora actual",
+		"localTime": "Hora local"
+	},
+	"Privacy": {
+		"title": "Política de privacidad",
+		"introduction": {
+			"title": "Introducción",
+			"content": "En Time Sync World, tu privacidad es nuestra prioridad. Esta política explica cómo recopilamos, utilizamos y protegemos tu información personal."
+		}
+	},
+	"TimeZones": {
+		"title": "Zonas horarias",
+		"searchPlaceholder": "Buscar ciudad o zona horaria",
+		"noResults": "No se encontraron resultados",
+		"currentTime": "Hora actual",
+		"currentTimeIn": "Hora actual en:",
+		"errorLoading": "Error al cargar los datos",
+		"visitFullApp": "Acceder a la aplicación completa",
+		"meta": {
+			"title": "Hora actual en {city} - Time Sync World",
+			"description": "Consulta la hora actual en {city}, zona horaria: {timezone} - Time Sync World"
+		},
+		"list": {
+			"title": "Zonas horarias disponibles",
+			"goBack": "Volver al inicio"
+		},
+		"component": {
+			"addTimezone": "Agregar zona horaria",
+			"24hourTime": "Formato 24 horas",
+			"showSeconds": "Mostrar segundos",
+			"addNewTimezone": "Agregar nueva zona horaria",
+			"add": "Agregar",
+			"lightMode": "Modo claro",
+			"darkMode": "Modo oscuro",
+			"yourLocation": "Tu ubicación",
+			"tagline": "Time Sync World: La herramienta perfecta para gestionar zonas horarias"
+		}
+	},
+	"Footer": {
+		"title": "Time Sync World",
+		"welcome": "Bienvenido a Time Sync World, tu solución global para la gestión del tiempo. Ayudamos a viajeros y profesionales a coordinar reuniones en cualquier parte del mundo con información precisa sobre zonas horarias. Mantente conectado sin complicaciones y aprovecha cada momento.",
+		"home": "Inicio",
+		"helpfulLinks": "Enlaces útiles",
+		"supportedTimezones": "Zonas horarias disponibles",
+		"sitemap": "Mapa del sitio.xml",
+		"privacy": "Privacidad",
+		"copyright": "© {year} Time Sync World. Todos los derechos reservados."
+	}
 }
