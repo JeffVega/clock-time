@@ -20,7 +20,7 @@ const geistMono = localFont({
 	weight: "100 900",
 });
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata(): Promise<Metadata> {
 	const t = await getTranslations("Index.meta");
 	return {
 		metadataBase: new URL(`${baseUrl}`),
