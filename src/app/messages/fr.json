@@ -13,11 +13,48 @@
 		"localTime": "Heure locale"
 	},
 	"Privacy": {
-		"title": "Politique de confidentialité",
+		"title": "Politique de Confidentialité",
 		"introduction": {
 			"title": "Introduction",
-			"content": "Chez Time Sync World, nous accordons la plus grande importance à votre vie privée. Cette politique détaille la façon dont nous collectons, utilisons et protégeons vos données personnelles."
-		}
+			"content": "Cette Politique de Confidentialité décrit comment World Clock Time (\"nous\" ou \"notre\") collecte, utilise et partage vos informations personnelles lorsque vous utilisez notre site web."
+		},
+		"information": {
+			"title": "Informations que Nous Collectons",
+			"items": [
+				"Données de navigation et cookies",
+				"Préférences de fuseau horaire",
+				"Informations sur l'appareil",
+				"Données d'utilisation"
+			]
+		},
+		"usage": {
+			"title": "Comment Nous Utilisons Vos Informations",
+			"items": [
+				"Pour fournir et maintenir notre service",
+				"Pour sauvegarder vos préférences",
+				"Pour améliorer notre site web",
+				"Pour respecter les obligations légales"
+			]
+		},
+		"rights": {
+			"title": "Vos Droits (RGPD & CCPA)",
+			"items": [
+				"Droit d'accès à vos données",
+				"Droit de suppression de vos données",
+				"Droit à la portabilité des données",
+				"Droit d'opposition à la collecte de données",
+				"Droit à la non-discrimination pour l'exercice de ces droits"
+			]
+		},
+		"storage": {
+			"title": "Stockage et Sécurité des Données",
+			"content": "Nous utilisons le stockage local et les cookies pour sauvegarder vos préférences. Nous mettons en œuvre des mesures de sécurité appropriées pour protéger vos données."
+		},
+		"contact": {
+			"title": "Nous Contacter",
+			"content": "Pour toute question concernant cette Politique de Confidentialité, veuillez nous contacter à : hello(@)timesync.world"
+		},
+		"lastUpdated": "Dernière mise à jour : {date}"
 	},
 	"TimeZones": {
 		"title": "Fuseaux horaires",

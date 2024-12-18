@@ -16,8 +16,45 @@
 		"title": "Datenschutzerklärung",
 		"introduction": {
 			"title": "Einführung",
-			"content": "Bei Time Sync World nehmen wir Ihre Privatsphäre sehr ernst. Diese Richtlinie erklärt, wie wir Ihre persönlichen Daten sammeln, verwenden und schützen."
-		}
+			"content": "Diese Datenschutzerklärung beschreibt, wie World Clock Time (\"wir\" oder \"unser\") Ihre personenbezogenen Daten erfasst, verwendet und weitergibt, wenn Sie unsere Website nutzen."
+		},
+		"information": {
+			"title": "Informationen, die wir sammeln",
+			"items": [
+				"Browser-Daten und Cookies",
+				"Zeitzoneneinstellungen",
+				"Geräteinformationen",
+				"Nutzungsdaten"
+			]
+		},
+		"usage": {
+			"title": "Wie wir Ihre Informationen verwenden",
+			"items": [
+				"Um unseren Service bereitzustellen und zu warten",
+				"Um Ihre Einstellungen zu speichern",
+				"Um unsere Website zu verbessern",
+				"Um rechtliche Verpflichtungen zu erfüllen"
+			]
+		},
+		"rights": {
+			"title": "Ihre Rechte (DSGVO & CCPA)",
+			"items": [
+				"Recht auf Zugang zu Ihren Daten",
+				"Recht auf Löschung Ihrer Daten",
+				"Recht auf Datenübertragbarkeit",
+				"Recht auf Widerspruch gegen die Datenerhebung",
+				"Recht auf Nichtdiskriminierung bei der Ausübung dieser Rechte"
+			]
+		},
+		"storage": {
+			"title": "Datenspeicherung und Sicherheit",
+			"content": "Wir verwenden lokale Speicherung und Cookies, um Ihre Einstellungen zu speichern. Wir setzen angemessene Sicherheitsmaßnahmen ein, um Ihre Daten zu schützen."
+		},
+		"contact": {
+			"title": "Kontakt",
+			"content": "Bei Fragen zu dieser Datenschutzerklärung kontaktieren Sie uns bitte unter: hello(@)timesync.world"
+		},
+		"lastUpdated": "Zuletzt aktualisiert: {date}"
 	},
 	"TimeZones": {
 		"title": "Zeitzonen",

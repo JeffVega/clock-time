@@ -13,11 +13,48 @@
 		"localTime": "Hora local"
 	},
 	"Privacy": {
-		"title": "Política de privacidad",
+		"title": "Política de Privacidad",
 		"introduction": {
 			"title": "Introducción",
-			"content": "En Time Sync World, tu privacidad es nuestra prioridad. Esta política explica cómo recopilamos, utilizamos y protegemos tu información personal."
-		}
+			"content": "Esta Política de Privacidad describe cómo World Clock Time (\"nosotros\" o \"nuestro\") recopila, utiliza y comparte su información personal cuando utiliza nuestro sitio web."
+		},
+		"information": {
+			"title": "Información que Recopilamos",
+			"items": [
+				"Datos del navegador y cookies",
+				"Preferencias de zona horaria",
+				"Información del dispositivo",
+				"Datos de uso"
+			]
+		},
+		"usage": {
+			"title": "Cómo Utilizamos su Información",
+			"items": [
+				"Para proporcionar y mantener nuestro servicio",
+				"Para guardar sus preferencias",
+				"Para mejorar nuestro sitio web",
+				"Para cumplir con obligaciones legales"
+			]
+		},
+		"rights": {
+			"title": "Sus Derechos (GDPR & CCPA)",
+			"items": [
+				"Derecho a acceder a sus datos",
+				"Derecho a eliminar sus datos",
+				"Derecho a la portabilidad de datos",
+				"Derecho a optar por no compartir datos",
+				"Derecho a la no discriminación por ejercer estos derechos"
+			]
+		},
+		"storage": {
+			"title": "Almacenamiento y Seguridad de Datos",
+			"content": "Utilizamos almacenamiento local y cookies para guardar sus preferencias. Implementamos medidas de seguridad apropiadas para proteger sus datos."
+		},
+		"contact": {
+			"title": "Contáctenos",
+			"content": "Para cualquier pregunta sobre esta Política de Privacidad, contáctenos en: hello(@)timesync.world"
+		},
+		"lastUpdated": "Última actualización: {date}"
 	},
 	"TimeZones": {
 		"title": "Zonas horarias",

@@ -16,8 +16,45 @@
 		"title": "Privacy Policy",
 		"introduction": {
 			"title": "Introduction",
-			"content": "At Time Sync World, we take your privacy seriously. This policy explains how we collect, use, and protect your personal information."
-		}
+			"content": "This Privacy Policy describes how World Clock Time (\"we,\" \"us,\" or \"our\") collects, uses, and shares your personal information when you use our website."
+		},
+		"information": {
+			"title": "Information We Collect",
+			"items": [
+				"Browser data and cookies",
+				"Time zone preferences",
+				"Device information",
+				"Usage data"
+			]
+		},
+		"usage": {
+			"title": "How We Use Your Information",
+			"items": [
+				"To provide and maintain our service",
+				"To save your preferences",
+				"To improve our website",
+				"To comply with legal obligations"
+			]
+		},
+		"rights": {
+			"title": "Your Rights (GDPR & CCPA)",
+			"items": [
+				"Right to access your data",
+				"Right to delete your data",
+				"Right to data portability",
+				"Right to opt-out of data collection",
+				"Right to non-discrimination for exercising these rights"
+			]
+		},
+		"storage": {
+			"title": "Data Storage and Security",
+			"content": "We use local storage and cookies to store your preferences. We implement appropriate security measures to protect your data."
+		},
+		"contact": {
+			"title": "Contact Us",
+			"content": "For any questions about this Privacy Policy, please contact us at: hello(@)timesync.world"
+		},
+		"lastUpdated": "Last updated: {date}"
 	},
 	"TimeZones": {
 		"title": "Time Zones",
